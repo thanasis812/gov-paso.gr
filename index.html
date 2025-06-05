@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>There is a problem with the server please try again latter </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Server Unreachable</title>
   <style>
     body {
+      margin: 0;
+      background-color: #003476;
+      font-family: Arial, sans-serif;
+      color: white;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      flex-direction: column;
+      position: relative;
+      overflow: hidden;
     }
-    .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #3498db;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
+    /* Image top-left */
+    .top-left-image {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 120px; /* adjust size if needed */
+      height: auto;
+      user-select: none;
+      pointer-events: none;
     }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    p {
-      margin-top: 20px;
-      color: #555;
+    /* Center card */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      max-width: 350px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
   </style>
 </head>
 <body>
-  <div class="loader"></div>
-  <p>Redirecting to http://www.gov.paso.gr/user?=234334...</p>
+  <img class="top-left-image" src="logo.png" alt="Logo" />
 
-  <script>
-    // If the current hostname is not 'gov.paso.gr', push the fake URL
-    if (window.location.hostname !== 'www.gov.paso.gr') {
-      setTimeout(() => {
-        history.pushState(null, '', 'http://www.gov.paso.gr/user?=234334');
-      }, 1000);
-    }
-
-    // If someone refreshes while URL looks like gov.paso.gr, redirect to real file
-    if (window.location.hostname === 'www.gov.paso.gr') {
-      window.location.replace('index.html'); // fallback to actual page
-    }
-  </script>
+  <div class="card">
+    <strong>Server is unreachable at the moment.</strong>
+    <p>Please try again later.</p>
+  </div>
 </body>
 </html>
