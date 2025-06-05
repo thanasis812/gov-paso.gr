@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Server Unreachable</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #003476;
-      font-family: Arial, sans-serif;
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Image top-left */
-    .top-left-image {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 120px; /* adjust size if needed */
-      height: auto;
-      user-select: none;
-      pointer-events: none;
-    }
-    /* Center card */
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      max-width: 350px;
-      text-align: center;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gov.gr</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #003087;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        .header button {
+            background-color: #00a3e0;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            text-align: center;
+        }
+        .main p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .main button {
+            background-color: #003087;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #003087;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-  <img class="top-left-image" src="logo.png" alt="Logo" />
-
-  <div class="card">
-    <strong>Server is unreachable at the moment.</strong>
-    <p>Please try again later.</p>
-  </div>
+    <div class="header">
+        <div>gov.gr</div>
+        <div>
+            <input type="text" placeholder="Αναζήτηση εδώ...">
+            <button>Αναζήτηση</button>
+        </div>
+    </div>
+    <div class="main">
+        <p>Server is unavailable at the moment</p>
+        <button>Επαναφορά αρχικής</button>
+    </div>
+    <div class="footer">
+        <p>Χρησιμοποιούμε cookies για την αναβάθμιση της εμπειρίας σας στο site. Με τη χρήση του site συμφωνείτε στη χρήση cookies.</p>
+    </div>
 </body>
 </html>
